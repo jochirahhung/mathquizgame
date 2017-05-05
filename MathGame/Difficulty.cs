@@ -6,10 +6,12 @@ using System.Threading.Tasks;
 
 namespace MathGame
 {
-    class Program
+    public class Difficulty
     {
-        static void Main(string[] args)
-        {
+        public string determineDiff(int streak){
+            string currDiff = "";
+
+            return currDiff;
         }
     }
 }
