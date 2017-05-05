@@ -12,7 +12,8 @@ namespace MathGame
         Difficulty diff = new Difficulty();
         static void Main(string[] args)
         {
-            gameLoop();
+            Game g = new Game();
+            g.gameLoop();
         }
 
         public void gameLoop()
