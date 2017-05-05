@@ -19,7 +19,7 @@ namespace MathGame
         public void gameLoop()
         {
             int streak = 0;
-            questGen.generateQuestion();
+            questGen.generateQuestion(diff.determineDiff(streak), streak);
         }
     }
 }
