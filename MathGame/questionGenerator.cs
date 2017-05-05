@@ -27,7 +27,7 @@ namespace MathGame
             return number2;
         }
 
-        private int determineOperator(string diff, int streak)
+        public int determineOperator(string diff, int streak)
         {
             Random randOp = new Random();
             int answer = 0;

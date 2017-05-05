@@ -1,0 +1,9 @@
+C:\Users\Zach\Documents\GitHub\mathquizgame\MathGameTest\bin\Debug\MathGameTest.dll
+C:\Users\Zach\Documents\GitHub\mathquizgame\MathGameTest\bin\Debug\MathGameTest.pdb
+C:\Users\Zach\Documents\GitHub\mathquizgame\MathGameTest\bin\Debug\MathGame.exe
+C:\Users\Zach\Documents\GitHub\mathquizgame\MathGameTest\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\Zach\Documents\GitHub\mathquizgame\MathGameTest\bin\Debug\MathGame.pdb
+C:\Users\Zach\Documents\GitHub\mathquizgame\MathGameTest\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.xml
+C:\Users\Zach\Documents\GitHub\mathquizgame\MathGameTest\obj\Debug\MathGameTest.csprojResolveAssemblyReference.cache
+C:\Users\Zach\Documents\GitHub\mathquizgame\MathGameTest\obj\Debug\MathGameTest.dll
+C:\Users\Zach\Documents\GitHub\mathquizgame\MathGameTest\obj\Debug\MathGameTest.pdb
