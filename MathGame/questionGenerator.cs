@@ -31,6 +31,25 @@ namespace MathGame
             int randomOperator;
             diff = difficulty.determineDiff(streak);
             return answer;
+        }
+
+        private int additionOperator(int number, int number2)
+        {
+            
+        }
+
+        private int subtractionOperator(int number, int number2)
+        {
+
+        }
+
+        private int multiplicationOperator(int number, int number2)
+        {
+
+        }
+
+        private int divisionOperator(int number, int number2)
+        {
 
         }
 
