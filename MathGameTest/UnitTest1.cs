@@ -12,15 +12,24 @@ namespace MathGameTest
         {
             //arrange
             questionGenerator gen = new questionGenerator();
-            string diff = "easy";
-            int streak = 3;
+            int streak = 5;
             int answer;
 
             //act
-            answer = gen.determineOperator(diff, streak);
+            answer = gen.determineOperator(streak);
 
             //assert
             Assert.IsTrue(answer != 0);
+
+        }
+
+        [TestMethod]
+        public void determineDiffTest()
+        {
+            Difficulty diff = new Difficulty();
+            int streak = 2;
+
+            Assert.IsFalse(diff.determineDiff(streak).Equals(null));
 
         }
     }

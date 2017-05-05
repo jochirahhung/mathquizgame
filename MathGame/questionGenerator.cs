@@ -27,29 +27,25 @@ namespace MathGame
             return number2;
         }
 
-        public int determineOperator(string diff, int streak)
+        public int determineOperator(int streak)
         {
             Random randOp = new Random();
             int answer = 0;
             int randomOperator = 0;
-            diff = difficulty.determineDiff(streak);
+            string diff = difficulty.determineDiff(streak);
             if (diff.Equals("easy", StringComparison.CurrentCultureIgnoreCase))
             {
-                randomOperator = randOp.Next(1, 3);
+                randomOperator = randOp.Next(1, 2);
                 num1 = rand.Next(1, 11);
                 num2 = rand.Next(1, 11);
                 if (randomOperator == 1)
                 {
                     answer = additionOperator(num1, num2);
                 }
-                else
-                {
-                    answer = subtractionOperator(num1, num2);
-                }
             }
             else if (diff.Equals("medium", StringComparison.CurrentCultureIgnoreCase))
             {
-                randomOperator = randOp.Next(1, 4);
+                randomOperator = randOp.Next(1, 3);
                 num1 = rand.Next(1, 21);
                 num2 = rand.Next(1, 21);
                 if (randomOperator == 1)
@@ -60,14 +56,10 @@ namespace MathGame
                 {
                     answer = subtractionOperator(num1, num2);
                 }
-                else
-                {
-                    answer = multiplicationOperator(num1, num2);
-                }
             }
             else if(diff.Equals("hard", StringComparison.CurrentCultureIgnoreCase))
             {
-                randomOperator = randOp.Next(1, 5);
+                randomOperator = randOp.Next(1, 4);
                 num1 = rand.Next(1, 51);
                 num2 = rand.Next(1, 51);
                 if (randomOperator == 1)
@@ -81,10 +73,6 @@ namespace MathGame
                 else if(randomOperator == 3)
                 {
                     answer = multiplicationOperator(num1, num2);
-                }
-                else
-                {
-                    answer = divisionOperator(num1, num2);
                 }
             }
             else if (diff.Equals("expert", StringComparison.CurrentCultureIgnoreCase))
@@ -133,9 +121,9 @@ namespace MathGame
             return number / number2;
         }
 
-        public void generateQuestion(string diff, int streak)
+        public void generateQuestion(int streak)
         {
-            determineOperator(diff, streak);
+            determineOperator(streak);
         }
 
 
