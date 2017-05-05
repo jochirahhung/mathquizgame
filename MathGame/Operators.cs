@@ -8,9 +8,9 @@ namespace MathGame
 {
     enum Operators
     {
-        +,
-        -,
-        X,
-        /
+        ADD,
+        SUBTRACT,
+        MULTIPLY,
+        DIVIDE
     };
 }

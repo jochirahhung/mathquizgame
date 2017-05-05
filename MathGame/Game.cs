@@ -8,9 +8,17 @@ namespace MathGame
 {
     public class Game
     {
+        questionGenerator questGen = new questionGenerator();
+        Difficulty diff = new Difficulty();
         static void Main(string[] args)
         {
+            gameLoop();
+        }
 
+        public void gameLoop()
+        {
+            int streak = 0;
+            questGen.generateQuestion();
         }
     }
 }

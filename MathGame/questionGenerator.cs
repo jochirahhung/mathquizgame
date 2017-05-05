@@ -8,14 +8,37 @@ namespace MathGame
 {
     public class questionGenerator
     {
-        public int firstNum(string diff)
+        Difficulty difficulty = new Difficulty();
+        int num1;
+        int num2;
+        private int firstNum(string diff, int streak)
         {
+            int number1 = 0;
+            diff = difficulty.determineDiff(streak);
+            return number1;
+        }
+
+        private int secondNum(string diff, int streak)
+        {
+            int number2 = 0;
+            diff = difficulty.determineDiff(streak);
+            return number2;
+        }
+
+        private int determineOperator(string diff, int streak)
+        {
+            int answer = 0;
+            int randomOperator;
+            diff = difficulty.determineDiff(streak);
+            return answer;
 
         }
 
-        public int secondNum(string diff)
+        public void generateQuestion()
         {
-
+            num1 = firstNum();
+            num2 = secondNum();
+            determineOperator();
         }
 
 
