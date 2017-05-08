@@ -16,7 +16,7 @@ namespace MathGameTest
             int answer;
 
             //act
-            answer = gen.determineOperator(streak);
+            answer = gen.createQuestion(streak);
 
             //assert
             Assert.IsTrue(answer != 0);

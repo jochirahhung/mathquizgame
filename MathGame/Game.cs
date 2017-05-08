@@ -18,8 +18,16 @@ namespace MathGame
 
         public void gameLoop()
         {
-            int streak = 0;
+            int streak = 1;
             questGen.generateQuestion(streak);
+            string playerAnswer = Console.ReadLine();
+            if (playerAnswer == questGen.answer.ToString())
+            {
+                Console.WriteLine("Correct!");
+            }
+            else{
+                Console.WriteLine("Incorrect :(");
+            }
         }
     }
 }

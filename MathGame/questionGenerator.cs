@@ -9,123 +9,98 @@ namespace MathGame
     public class questionGenerator
     {
         Random rand = new Random();
-        Random rand2 = new Random();
         Difficulty difficulty = new Difficulty();
-        int num1;
-        int num2;
-        private int firstNum(string diff, int streak)
+        public int answer { get; set; }
+        string[] operators = new string[4] { "+", "-", "*", "/" };
+
+        private int randNum(string diff, int streak)
         {
-            int number1 = 0;
+            int number = 0;
             diff = difficulty.determineDiff(streak);
-            return number1;
+
+            if (diff.Equals("easy", StringComparison.CurrentCultureIgnoreCase))
+            {
+                number = rand.Next(1, 11);
+            }
+            else if (diff.Equals("medium", StringComparison.CurrentCultureIgnoreCase))
+            {
+                number = rand.Next(1, 21);
+            }
+            else if (diff.Equals("hard", StringComparison.CurrentCultureIgnoreCase))
+            {
+                number = rand.Next(1, 51);
+            }
+            else if (diff.Equals("expert", StringComparison.CurrentCultureIgnoreCase))
+            {
+                number = rand.Next(1, 101);
+            }
+
+            return number;
         }
 
-        private int secondNum(string diff, int streak)
-        {
-            int number2 = 0;
-            diff = difficulty.determineDiff(streak);
-            return number2;
-        }
-
-        public int determineOperator(int streak)
+        private int determineOperator(string diff)
         {
             Random randOp = new Random();
-            int answer = 0;
             int randomOperator = 0;
-            string diff = difficulty.determineDiff(streak);
+
             if (diff.Equals("easy", StringComparison.CurrentCultureIgnoreCase))
             {
                 randomOperator = randOp.Next(1, 2);
-                num1 = rand.Next(1, 11);
-                num2 = rand.Next(1, 11);
-                if (randomOperator == 1)
-                {
-                    answer = additionOperator(num1, num2);
-                }
             }
             else if (diff.Equals("medium", StringComparison.CurrentCultureIgnoreCase))
             {
                 randomOperator = randOp.Next(1, 3);
-                num1 = rand.Next(1, 21);
-                num2 = rand.Next(1, 21);
-                if (randomOperator == 1)
-                {
-                    answer = additionOperator(num1, num2);
-                }
-                else if(randomOperator == 2)
-                {
-                    answer = subtractionOperator(num1, num2);
-                }
             }
-            else if(diff.Equals("hard", StringComparison.CurrentCultureIgnoreCase))
+            else if (diff.Equals("hard", StringComparison.CurrentCultureIgnoreCase))
             {
                 randomOperator = randOp.Next(1, 4);
-                num1 = rand.Next(1, 51);
-                num2 = rand.Next(1, 51);
-                if (randomOperator == 1)
-                {
-                    answer = additionOperator(num1, num2);
-                }
-                else if (randomOperator == 2)
-                {
-                    answer = subtractionOperator(num1, num2);
-                }
-                else if(randomOperator == 3)
-                {
-                    answer = multiplicationOperator(num1, num2);
-                }
             }
             else if (diff.Equals("expert", StringComparison.CurrentCultureIgnoreCase))
             {
                 randomOperator = randOp.Next(1, 5);
-                num1 = rand.Next(1, 101);
-                num2 = rand.Next(1, 101);
-                if (randomOperator == 1)
-                {
-                    answer = additionOperator(num1, num2);
-                }
-                else if (randomOperator == 2)
-                {
-                    answer = subtractionOperator(num1, num2);
-                }
-                else if (randomOperator == 3)
-                {
-                    answer = multiplicationOperator(num1, num2);
-                }
-                else
-                {
-                    answer = divisionOperator(num1, num2);
-                }
             }
-            Console.WriteLine(answer);
+
+            return randomOperator;
+        }
+
+        public int createQuestion(int streak)
+        {
+            string diff = difficulty.determineDiff(streak);
+            int value = determineOperator(diff);
+
+            int num1 = randNum(diff, streak);
+            int num2 = randNum(diff, streak);
+
+            while (num1 < num2)
+            {
+                num1 = randNum(diff, streak);
+                num2 = randNum(diff, streak);
+            }
+
+            if (value == 1)
+            {
+                answer = num1 + num2;
+            }
+            else if (value == 2)
+            {
+                answer = num1 - num2;
+            }
+            else if (value == 3)
+            {
+                answer = num1 * num2;
+            }
+            else
+            {
+                answer = num1 / num2;
+            }
+            Console.WriteLine(num1 + operators[value - 1] + num2);
+
             return answer;
-        }
-
-        private int additionOperator(int number, int number2)
-        {
-            return number + number2;
-        }
-
-        private int subtractionOperator(int number, int number2)
-        {
-            return number - number2;
-        }
-
-        private int multiplicationOperator(int number, int number2)
-        {
-            return number * number2;
-        }
-
-        private int divisionOperator(int number, int number2)
-        {
-            return number / number2;
         }
 
         public void generateQuestion(int streak)
         {
-            determineOperator(streak);
+            createQuestion(streak);
         }
-
-
     }
 }
