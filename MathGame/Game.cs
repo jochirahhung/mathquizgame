@@ -19,14 +19,29 @@ namespace MathGame
         public void gameLoop()
         {
             int streak = 1;
-            questGen.generateQuestion(streak);
-            string playerAnswer = Console.ReadLine();
-            if (playerAnswer == questGen.answer.ToString())
+            int loseStreak = 0;
+            int score = 0;
+            while (loseStreak <= 2)
             {
-                Console.WriteLine("Correct!");
+                questGen.generateQuestion(streak);
+                string playerAnswer = Console.ReadLine();
+                if (playerAnswer == questGen.answer.ToString())
+                {
+                    Console.WriteLine("Correct!");
+                    streak+=1;
+                    score++;
+                }
+                else
+                {
+                    Console.WriteLine("Incorrect :(");
+                    loseStreak++;
+                    streak--;
+                }
             }
-            else{
-                Console.WriteLine("Incorrect :(");
+            if (loseStreak == 3)
+            {
+                Console.WriteLine("Game Over");
+                Console.WriteLine(score);
             }
         }
     }
