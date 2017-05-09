@@ -100,6 +100,7 @@ namespace MathGame
             else
             {
                 answer = num1 / num2;
+                
             }
             Console.WriteLine(num1 + operators[value - 1] + num2);
 

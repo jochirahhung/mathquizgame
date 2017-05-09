@@ -77,6 +77,16 @@ namespace MathGame
             Timer time = new Timer(10000);
             Console.WriteLine(time);
         }
+
+        public int timer(bool answerRight)
+        {
+            int count = 10;
+            while (count > 0 && answerRight == false)
+            {
+                count -= 1;
+            }
+            return count;
+        }
     }
 
 }

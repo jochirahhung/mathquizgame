@@ -30,7 +30,14 @@ namespace MathGameTest
             int streak = 2;
 
             Assert.IsFalse(diff.determineDiff(streak).Equals(null));
+        }
+        [TestMethod]
+        public void determineQuestion()
+        {
+            questionGenerator gen = new questionGenerator();
+            int streak = 21;
 
+            Assert.IsTrue(gen.createQuestion(streak) >= 0);
         }
     }
 }
