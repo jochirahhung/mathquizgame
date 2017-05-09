@@ -34,7 +34,22 @@ namespace MathGame
                     Console.WriteLine("Correct! :)");
                     Console.WriteLine(" ");
                     streak += 1;
-                    score++;
+                    if (streak >= 0 && streak < 11)
+                    {
+                        score += 1;
+                    }
+                    else if (streak >= 11 && streak < 21)
+                    {
+                        score += 2;
+                    }
+                    else if (streak >= 21 && streak < 31)
+                    {
+                        score += 3;
+                    }
+                    else if (streak >= 31)
+                    {
+                        score += 4;
+                    }
                 }
                 else
                 {
