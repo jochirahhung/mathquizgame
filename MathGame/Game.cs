@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Timers;
 
 namespace MathGame
 {
@@ -69,6 +70,13 @@ namespace MathGame
                 Console.WriteLine(" ");
                 Console.WriteLine("Your final score: " + score + " points");
             }
+            timer();
+        }
+        public void timer()
+        {
+            Timer time = new Timer(10000);
+            Console.WriteLine(time);
         }
     }
+
 }

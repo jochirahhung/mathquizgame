@@ -73,8 +73,16 @@ namespace MathGame
 
             while (num1 < num2)
             {
-                num1 = randNum(diff, streak);
-                num2 = randNum(diff, streak);
+                if (diff.Equals("expert", StringComparison.CurrentCultureIgnoreCase) && num1 % num2 != 0)
+                {
+                    num1 = randNum(diff, streak);
+                    num2 = randNum(diff, streak);
+                }
+                else
+                {
+                    num1 = randNum(diff, streak);
+                    num2 = randNum(diff, streak);
+                }
             }
 
             if (value == 1)
