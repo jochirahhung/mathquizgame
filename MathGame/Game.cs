@@ -19,7 +19,7 @@ namespace MathGame
 
         public void gameLoop()
         {
-            int streak = 1;
+            int streak = 32;
             int loseStreak = 0;
             int score = 0;
             while (loseStreak <= 2)
@@ -30,7 +30,10 @@ namespace MathGame
                 Console.WriteLine(" ");
                 questGen.generateQuestion(streak);
                 string playerAnswer = Console.ReadLine();
-                if (playerAnswer == questGen.answer.ToString())
+                double realAnswer = 0.0;
+                double.TryParse(playerAnswer, out realAnswer);
+
+                if (realAnswer == questGen.answer)
                 {
                     Console.WriteLine("Correct! :)");
                     Console.WriteLine(" ");

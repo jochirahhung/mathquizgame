@@ -10,12 +10,12 @@ namespace MathGame
     {
         Random rand = new Random();
         Difficulty difficulty = new Difficulty();
-        public int answer { get; set; }
+        public double answer { get; set; }
         string[] operators = new string[4] { "+", "-", "*", "/" };
 
-        private int randNum(string diff, int streak)
+        private double randNum(string diff, int streak)
         {
-            int number = 0;
+            double number = 0;
             diff = difficulty.determineDiff(streak);
 
             if (diff.Equals("easy", StringComparison.CurrentCultureIgnoreCase))
@@ -63,26 +63,18 @@ namespace MathGame
             return randomOperator;
         }
 
-        public int createQuestion(int streak)
+        public double createQuestion(int streak)
         {
             string diff = difficulty.determineDiff(streak);
             int value = determineOperator(diff);
 
-            int num1 = randNum(diff, streak);
-            int num2 = randNum(diff, streak);
+            double num1 = randNum(diff, streak);
+            double num2 = randNum(diff, streak);
 
             while (num1 < num2)
             {
-                if (diff.Equals("expert", StringComparison.CurrentCultureIgnoreCase) && num1 % num2 != 0)
-                {
-                    num1 = randNum(diff, streak);
-                    num2 = randNum(diff, streak);
-                }
-                else
-                {
-                    num1 = randNum(diff, streak);
-                    num2 = randNum(diff, streak);
-                }
+                num1 = randNum(diff, streak);
+                num2 = randNum(diff, streak);
             }
 
             if (value == 1)
@@ -104,6 +96,7 @@ namespace MathGame
             }
             Console.WriteLine(num1 + operators[value - 1] + num2);
 
+            Console.WriteLine(answer);
             return answer;
         }
 
