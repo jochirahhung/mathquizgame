@@ -23,25 +23,36 @@ namespace MathGame
             int score = 0;
             while (loseStreak <= 2)
             {
+                Console.WriteLine("Streak: " + streak);
+                Console.WriteLine("Questions Wrong: " + loseStreak);
+                Console.WriteLine("Score: " + score + " points");
+                Console.WriteLine(" ");
                 questGen.generateQuestion(streak);
                 string playerAnswer = Console.ReadLine();
                 if (playerAnswer == questGen.answer.ToString())
                 {
-                    Console.WriteLine("Correct!");
-                    streak+=1;
+                    Console.WriteLine("Correct! :)");
+                    Console.WriteLine(" ");
+                    streak += 1;
                     score++;
                 }
                 else
                 {
                     Console.WriteLine("Incorrect :(");
+                    Console.WriteLine(" ");
                     loseStreak++;
-                    streak--;
+                    streak -= 1;
+                    if (streak == 0)
+                    {
+                        streak = 1;
+                    }
                 }
             }
             if (loseStreak == 3)
             {
-                Console.WriteLine("Game Over");
-                Console.WriteLine(score);
+                Console.WriteLine("You got 3 questions wrong.  Game Over!");
+                Console.WriteLine(" ");
+                Console.WriteLine("Your final score: " + score + " points");
             }
         }
     }
