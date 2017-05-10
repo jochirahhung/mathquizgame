@@ -19,9 +19,15 @@ namespace MathGame
             Console.WriteLine("Each time you go up in difficulty, you get more points for answering the question right!");
             Console.WriteLine("Getting one question wrong, decreases your streak by one, getting three wrong and you lose, have fun.");
             Console.WriteLine("When dividing, it rounds it up two decimal places, so do not exceed that please, or you get that wrong.");
-            Console.WriteLine("");
             Game g = new Game();
-            g.gameLoop();
+            Console.WriteLine("Play? y/n");
+            string play = Console.ReadLine();
+            while(play == "y")
+            {
+                g.gameLoop();
+                Console.WriteLine("Play again? y/n");
+                play = Console.ReadLine();
+            }
         }
 
         public void gameLoop()
@@ -80,7 +86,6 @@ namespace MathGame
                 Console.WriteLine(" ");
                 Console.WriteLine("Your final score: " + score + " points");
             }
-            Console.ReadLine();
         }
     }
 }
