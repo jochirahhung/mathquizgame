@@ -80,7 +80,7 @@ namespace MathGame
                 Console.WriteLine(" ");
                 Console.WriteLine("Your final score: " + score + " points");
             }
+            Console.ReadLine();
         }
     }
-
 }

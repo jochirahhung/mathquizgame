@@ -7,10 +7,6 @@ namespace MathGameTest
     [TestClass]
     public class UnitTest1
     {
-
-
-
-
         [TestMethod]
         public void determineDiffTest()
         {
@@ -29,5 +25,30 @@ namespace MathGameTest
             Assert.IsTrue(diff.determineDiff(streak).Equals("easy"));
         }
 
+        [TestMethod]
+        public void generateQuestionTest()
+        {
+            questionGenerator gen = new questionGenerator();
+            double number = 0.0;
+            int streak = 5;
+            gen.generateQuestion(streak);
+
+            number = gen.answer;
+
+            Assert.IsTrue(number >= 1 && number < 21);
+        }
+
+        [TestMethod]
+        public void generateQuestion2Test()
+        {
+            questionGenerator gen = new questionGenerator();
+            double number = 0.0;
+            int streak = 15;
+            gen.generateQuestion(streak);
+
+            number = gen.answer;
+
+            Assert.IsTrue(number >= 0 && number < 41);
+        }
     }
 }
