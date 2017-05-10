@@ -13,7 +13,7 @@ namespace MathGame
         Difficulty diff = new Difficulty();
         static void Main(string[] args)
         {
-            Console.WriteLine("Rules");
+            Console.WriteLine("Rules:");
             Console.WriteLine("Welcome Everyone. This is our Math Game.");
             Console.WriteLine("Every 10 questions you get right, will increase in difficulty!");
             Console.WriteLine("Each time you go up in difficulty, you get more points for answering the question right!");
