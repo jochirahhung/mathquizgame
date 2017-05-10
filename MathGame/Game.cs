@@ -13,13 +13,20 @@ namespace MathGame
         Difficulty diff = new Difficulty();
         static void Main(string[] args)
         {
+            Console.WriteLine("Rules");
+            Console.WriteLine("Welcome Everyone. This is our Math Game.");
+            Console.WriteLine("Every 10 questions you get right, will increase in difficulty!");
+            Console.WriteLine("Each time you go up in difficulty, you get more points for answering the question right!");
+            Console.WriteLine("Getting one question wrong, decreases your streak by one, getting three wrong and you lose, have fun.");
+            Console.WriteLine("When dividing, it rounds it up two decimal places, so do not exceed that please, or you get that wrong.");
+            Console.WriteLine("");
             Game g = new Game();
             g.gameLoop();
         }
 
         public void gameLoop()
         {
-            int streak = 32;
+            int streak = 1;
             int loseStreak = 0;
             int score = 0;
             while (loseStreak <= 2)

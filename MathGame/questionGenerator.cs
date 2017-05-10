@@ -63,7 +63,7 @@ namespace MathGame
             return randomOperator;
         }
 
-        public double createQuestion(int streak)
+        private double createQuestion(int streak)
         {
             string diff = difficulty.determineDiff(streak);
             int value = determineOperator(diff);
@@ -91,12 +91,11 @@ namespace MathGame
             }
             else
             {
-                answer = num1 / num2;
-                
+                answer = num1 / num2;   
             }
             Console.WriteLine(num1 + operators[value - 1] + num2);
 
-            Console.WriteLine(answer);
+            answer = Math.Round(answer, 2);
             return answer;
         }
 
